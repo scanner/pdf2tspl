@@ -1,15 +1,13 @@
 # what is this
 
-I bought a cheap label printer for thermal shipping labels. This one is a Hotlabel S8, which appears to be a rebranded Xprinter XP-480B or thereabouts.
-These printers speak TSPL, which is yet another printer language, oriented around label production (no surprises there).
-It has the rather dubious distinction of being the first one I've seen that includes a BASIC interpreter...
+I bought a FreeX wifi connected label printer for printing labels, mostly for labelling bins. I needed a quick command line script for printing the contents of a bin. Since I have a lot of bins, going through some fancy UI program, setting the printer parameters, etc, just to print 1 of several hundred labels is too annoying. I forked OmniIoT/pdf2tspl mostly to see if I could easily communicate with the FreeX label printer via a relatively simple python program. 
 
-Anyway, the manufacturer includes Windows and Mac drivers, but no Linux ones, so I had to come up with something.
-I had a quick look at what it takes to make a CUPS driver; it requires a fair bit of fiddling - more than I have time for.
-So this repo contains what I made instead:
+Since the FreeX printer openly supports TSPL2 this was an easy place to start.
+
+So what is this? Based on the original README.md:
 
 1. a tool that takes a PDF and prints it on a label, and
-2. a print server that speaks the AppSocket protocol, so you can print to it from CUPS anyway.
+2. a print server that speaks the AppSocket protocol, so you can print to it from CUPS anyway. (I will likely remove this since the FreeX drivers work with CUPS out of the box.)
 
 # how do I print a thing
 
